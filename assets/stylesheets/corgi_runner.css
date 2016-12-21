@@ -39,8 +39,6 @@ main {
 }
 
 #game-canvas {
-  width: 800px;
-  height: 300px;
   background: #fff;
   border: 2px solid #C8C2E2;
   margin: 20px auto;
