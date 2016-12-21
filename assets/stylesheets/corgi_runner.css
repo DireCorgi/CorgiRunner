@@ -1,0 +1,123 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+}
+
+main {
+  background-repeat: no-repeat;
+  background-color: #000;
+  background-image: url('../images/background.png');
+  height: 100vh;
+  background-position: center;
+  position: relative;
+  text-align: center;
+  min-width: 1000px;
+}
+
+.main-header {
+  background-color: #393852;
+  text-align: center;
+  border-bottom: 3px solid #C8C2E2;
+  overflow: hidden;
+}
+
+.logo {
+  display: inline-block;
+  margin-left: 52px;
+}
+
+.logo > h1 {
+  font-family: 'VT323', monospace;
+  font-size: 60px;
+  letter-spacing: 4px;
+  padding: 10px;
+  display: inline-block;
+}
+
+.logo > img {
+  display: inline-block;
+}
+
+#game-canvas {
+  width: 800px;
+  height: 300px;
+  background: #fff;
+  border: 2px solid #C8C2E2;
+  margin: 20px auto;
+}
+
+.hanging-dog {
+  float: right;
+  margin: 0 10px 10px 10px;
+}
+
+.sidebar-clear {
+  float: left;
+  width: 181px;
+  height: 300px;
+}
+
+@media only screen and (max-width: 1181px) {
+  .sidebar-clear {
+    display: none;
+  }
+}
+
+.links {
+  float: right;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.links > a {
+  display: block;
+  margin: 28px 10px;
+  float: left;
+}
+
+.gameplay-nav {
+  border: 2px solid #C8C2E2;
+  border-radius: 4px;
+  width: 780px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.gameplay-nav > button {
+  padding: 10px 18px;
+  margin: 0 20px;
+  background: #4782C9;
+  border-radius: 4px;
+  border: 1px solid #C8C2E2;
+  width: 100px;
+  font-size: 14px;
+  text-shadow: 0 0 8px black;
+}
+
+#easy-button {
+  background-color: #67A4E0;
+}
+
+#medium-button {
+  background-color: #FFC90E;
+}
+
+#hard-button {
+  background-color: #FF4711;
+}
+
+#how-to-play-button:hover {
+  background-color: #3570b8;
+}
+
+#easy-button:hover {
+  background-color: #4b8dcd;
+}
+
+#medium-button:hover {
+  background-color: #e3b000;
+}
+
+#hard-button:hover {
+  background-color: #db3301;
+}
