@@ -19,6 +19,7 @@ main {
   text-align: center;
   border-bottom: 3px solid #C8C2E2;
   overflow: hidden;
+  min-width: 595px;
 }
 
 .logo {
@@ -38,10 +39,33 @@ main {
   display: inline-block;
 }
 
-#game-canvas {
-  background: #fff;
-  border: 2px solid #C8C2E2;
+.logo > img:first-child {
+  transform: scaleX(-1);
+}
+
+.game-area {
+  position: relative;
+  border: 0;
+  height: 300px;
+  width: 800px;
+  display: inline-block;
   margin: 20px auto;
+}
+
+#game-canvas {
+  position: absolute;
+  background: transparent;
+  border: 2px solid #C8C2E2;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+#background-canvas {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
 }
 
 .hanging-dog {
