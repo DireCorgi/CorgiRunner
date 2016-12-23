@@ -125,7 +125,7 @@ main {
   padding: 10px;
   position: absolute;
   z-index: 5;
-  bottom: 10px;
+  bottom: 0;
 }
 
 .gameplay-nav > button {
@@ -169,7 +169,7 @@ main {
 .how-to-play-container {
   position: absolute;
   z-index: 6;
-  top: 15px;
+  top: 12px;
   left: 100px;
   background: #fff;
   width: 600px;
@@ -272,4 +272,11 @@ main {
 
 .close {
   display: none;
+}
+
+.main-menu > h2 {
+  font-size: 40px;
+  margin-top: 30px;
+  font-family: 'VT323', monospace;
+  letter-spacing: 2px;
 }
