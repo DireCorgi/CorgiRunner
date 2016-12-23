@@ -123,43 +123,153 @@ main {
   width: 782px;
   margin: 0 auto;
   padding: 10px;
+  position: absolute;
+  z-index: 5;
+  bottom: 10px;
 }
 
 .gameplay-nav > button {
+  font-family: 'VT323', monospace;
+  letter-spacing: 1px;
   padding: 10px 18px;
   margin: 0 20px;
-  background: #4782C9;
-  border-radius: 4px;
-  border: 1px solid #C8C2E2;
   width: 100px;
-  font-size: 16px;
+  font-size: 24px;
   text-shadow: 0 0 8px black;
 }
 
 #easy-button {
-  background-color: #67A4E0;
+  color: #67A4E0;
 }
 
 #medium-button {
-  background-color: #FFC90E;
+  color: #FFC90E;
 }
 
 #hard-button {
-  background-color: #FF4711;
+  color: #FF4711;
 }
 
 #how-to-play-button:hover {
-  background-color: #3570b8;
+  color: #b9b9b9;
 }
 
 #easy-button:hover {
-  background-color: #4b8dcd;
+  color: #4b8dcd;
 }
 
 #medium-button:hover {
-  background-color: #e3b000;
+  color: #e3b000;
 }
 
 #hard-button:hover {
-  background-color: #db3301;
+  color: #db3301;
+}
+
+.how-to-play-container {
+  position: absolute;
+  z-index: 6;
+  top: 15px;
+  left: 100px;
+  background: #fff;
+  width: 600px;
+  border-radius: 5px;
+  font-size: 13px;
+  color: #222;
+  padding: 5px 10px;
+  position: relative;
+  display: none;
+}
+
+.how-to-play-open {
+  display: block;
+}
+
+.how-to-play-container > section {
+  width: 45%;
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.how-to-play-container > section > h2 {
+  font-size: 32px;
+  letter-spacing: 1px;
+  font-family: 'VT323', monospace;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px  solid #aaa;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: #fcff6e;
+}
+
+.dio {
+  background: url('../images/player-sprites.png') no-repeat -5px -89px;
+  width: 44px;
+  height: 64px;
+  margin: 10px 35px;
+  display: inline-block;
+}
+
+.sleeping {
+  display: inline-block;
+  margin: 10px 30px;
+}
+
+.story {
+  float: left;
+}
+
+.how-to-play {
+  float: right;
+}
+
+.how-to-play > p > small {
+  font-weight: 300;
+}
+
+.story > p > strong {
+  font-weight: 700;
+  color: #cd3636;
+}
+
+.tree {
+  background: url('../images/tree-sprites.png') no-repeat 0px 0px;
+  height: 60px;
+  width: 100px;
+  background-size: cover;
+  margin: 5px auto;
+}
+
+.bird {
+  background: url('../images/bird-sprites.png') no-repeat -65px -16px;
+	width: 57px;
+	height: 38px;
+  margin: 5px auto;
+}
+
+#close-how-to-play {
+  position: absolute;
+  font-weight: bold;
+  right: 10px;
+  top: 10px;
+}
+
+#close-how-to-play:hover {
+  text-decoration: underline;
+  color: #8a8a8a;
+}
+
+.main-menu {
+  position: absolute;
+  z-index: 4;
+  background: black;
+  top: 2px;
+  left: 2px;
+  bottom: 0px;
+  right: 0px;
+  display: block;
+}
+
+.close {
+  display: none;
 }

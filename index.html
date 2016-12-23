@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Corgi Runner</title>
     <link href="./assets/favicon.ico" rel="icon" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|VT323" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|VT323" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/stylesheets/reset.css" />
     <link rel="stylesheet" type="text/css" href="./assets/stylesheets/corgi_runner.css" />
     <script type="text/javascript" src="./bundle.js"></script>
@@ -30,13 +30,46 @@
         <canvas id="background-canvas" height="302" width="802"></canvas>
         <canvas id="foreground-canvas" height="302" width="802"></canvas>
         <img class="corgi" height="44" width="38" src="./assets/images/dog-animated.gif">
+        <article class="how-to-play-container group">
+          <section class='story'>
+            <h2>Story</h2>
+            <div class='dio'></div>
+            <img class='sleeping' src="./assets/images/sleeping-corgi.gif">
+            <p>
+              You are <strong>Dio Jr</strong>, son of the legendary heavy metal vocalist.
+              Your beloved corgi Ozzy the Second has run away because you didn't play his favorite song Holy Diver.
+              Catch your corgi so you can perform the greatest song of all time to your best friend.
+            </p>
+          </section>
+          <section class="how-to-play">
+            <h2>How to Play</h2>
+            <p>
+              Choose a difficulty <b>Easy</b>, <b>Medium</b>, <b>Hard</b>.
+            </p>
+            <div class="tree"></div>
+            <p>
+              Press <b>Space</b> to jump and avoid obstacles.
+            </p>
+            <p>
+              Jump over trees.
+            </p>
+            <div class="bird"></div>
+            <p>
+              Don't jump into birds! <small>(Only spawns on Hard)</small>
+            </p>
+            <button id="close-how-to-play">Close X</button>
+          </section>
+        </article>
+        <section class='main-menu'>
+          <h2>Corgi Runner</h2>
+          <nav class="gameplay-nav group">
+            <button id="easy-button">Easy</button>
+            <button id="medium-button">Medium</button>
+            <button id="hard-button">Hard</button>
+            <button id="how-to-play-button">Info</button>
+          </nav>
+        </section>
       </div>
-      <nav class="gameplay-nav group">
-        <button id="easy-button">Easy</button>
-        <button id="medium-button">Medium</button>
-        <button id="hard-button">Hard</button>
-        <button id="how-to-play-button">How to Play</button>
-      </nav>
     </main>
   </body>
 </html>
