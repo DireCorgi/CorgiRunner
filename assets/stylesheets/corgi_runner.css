@@ -120,9 +120,7 @@ main {
 }
 
 .gameplay-nav {
-  border: 2px solid #C8C2E2;
-  border-radius: 4px;
-  width: 780px;
+  width: 782px;
   margin: 0 auto;
   padding: 10px;
 }
