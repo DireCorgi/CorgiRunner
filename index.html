@@ -29,7 +29,7 @@
         <canvas id="game-canvas" height="300" width="800" tabindex="1"></canvas>
         <canvas id="background-canvas" height="302" width="802"></canvas>
         <canvas id="foreground-canvas" height="302" width="802"></canvas>
-        <img class="corgi" height="44" width="38" src="./assets/images/dog-animated.gif">
+        <img class="corgi run-away" height="44" width="38" src="./assets/images/dog-animated.gif">
         <article class="how-to-play-container group">
           <section class='story'>
             <h2>Story</h2>
@@ -62,10 +62,20 @@
         </article>
         <section class="main-menu">
           <h2>Corgi Runner</h2>
-          <section id="high-scores">
-            <li>Dio: 50,000</li>
-            <li>Dio: 25,000</li>
+          <section class="high-scores group">
+            <div class="local-high-score">
+              <h2>Local High Scores</h2>
+              <ul id="local-high-scores">
+              </ul>
+            </div>
+            <div class="global-high-score">
+              <h2>Global High Scores</h2>
+              <ul id="global-high-scores">
+              </ul>
+            </div>
           </section>
+          <div class="player-menu-sprite"></div>
+          <div class="dog-menu-sprite"></div>
           <nav class="gameplay-nav group">
             <button id="easy-button">Easy</button>
             <button id="medium-button">Medium</button>

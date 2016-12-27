@@ -276,7 +276,58 @@ main {
 
 .main-menu > h2 {
   font-size: 40px;
-  margin-top: 30px;
+  margin-top: 20px;
   font-family: 'VT323', monospace;
   letter-spacing: 2px;
+  text-shadow: -1px 0 #393852, 0 1px #393852, 1px 0 #393852, 0 -1px #393852;
+}
+
+.high-scores {
+  border: 2px solid #C8C2E2;
+  width: 400px;
+  margin: 10px auto;
+  padding: 10px;
+  font-family: 'VT323', monospace;
+}
+
+.high-scores li {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 3px;
+}
+
+.high-scores h2 {
+  font-size: 24px;
+}
+
+.local-high-score {
+  float: left;
+  text-align: left;
+}
+
+.global-high-score {
+  float: right;
+  text-align: left;
+}
+
+.right-score {
+  float: right;
+}
+
+.dog-menu-sprite {
+  background: url('../images/dog-eating.gif');
+	width: 64px;
+	height: 38px;
+  position: absolute;
+  right: 60px;
+  top: 50%;
+}
+
+.player-menu-sprite {
+  background: url('../images/player-menu.gif');
+	width: 50px;
+	height: 75px;
+  position: absolute;
+  left: 60px;
+  top: 40%;
 }
