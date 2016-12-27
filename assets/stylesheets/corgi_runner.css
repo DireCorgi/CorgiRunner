@@ -270,9 +270,6 @@ main {
   display: block;
 }
 
-.close {
-  display: none;
-}
 
 .main-menu > h2 {
   font-size: 40px;
@@ -284,7 +281,7 @@ main {
 
 .high-scores {
   border: 2px solid #C8C2E2;
-  width: 400px;
+  width: 480px;
   margin: 10px auto;
   padding: 10px;
   font-family: 'VT323', monospace;
@@ -297,17 +294,21 @@ main {
 }
 
 .high-scores h2 {
-  font-size: 24px;
+  font-size: 28px;
+  text-align: center;
+  border-bottom: 1px solid #fff;
 }
 
 .local-high-score {
   float: left;
   text-align: left;
+  width: 220px;
 }
 
 .global-high-score {
   float: right;
   text-align: left;
+  width: 220px;
 }
 
 .right-score {
@@ -330,4 +331,62 @@ main {
   position: absolute;
   left: 60px;
   top: 40%;
+}
+
+.game-over {
+  display: block;
+  position: absolute;
+  z-index: 4;
+  color: white;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+}
+
+.game-over > button {
+  font-size: 24px;
+  color: #FEF86C;
+  position: absolute;
+  left: 35px;
+  top: 21px;
+  text-shadow: 0 0 4px black;
+}
+
+.game-over > button:hover {
+  text-shadow: 0 0 1px black;
+}
+
+.close {
+  display: none;
+}
+
+.high-score-form {
+  position: absolute;
+  left: 400px;
+  transform: translateX(-50%);
+  top: 30px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.high-score-form > label {
+  font-size: 24px;
+}
+
+.high-score-form input {
+  background: rgba(185,185,185,.3);
+  border: 1px solid black;
+  color: black;
+  padding: 2px 8px;
+  text-align: left;
+  width: 100px;
+  font-size: 20px;
+}
+
+.high-score-form > button {
+  color: #FEF86C;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  letter-spacing: 1px;
+}
+
+.high-score-form > button:hover {
+  color: #fffc9f;
 }
