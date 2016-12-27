@@ -355,9 +355,6 @@ main {
   text-shadow: 0 0 1px black;
 }
 
-.close {
-  display: none;
-}
 
 .high-score-form {
   position: absolute;
@@ -389,4 +386,8 @@ main {
 
 .high-score-form > button:hover {
   color: #fffc9f;
+}
+
+.close {
+  display: none;
 }
