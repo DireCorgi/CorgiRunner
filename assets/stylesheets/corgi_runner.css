@@ -401,8 +401,8 @@ main {
 #mute-button {
   position: absolute;
   z-index: 5;
-  left: 90px;
-  top: 21px;
+  left: 35px;
+  top: 45px;
   font-size: 24px;
   color: #FEF86C;
   text-shadow: 0 0 4px black;
