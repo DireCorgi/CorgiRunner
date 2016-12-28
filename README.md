@@ -1,43 +1,96 @@
 # Corgi Runner
-Corgi Runner is an infinite run game inspired by games such as Google's t-rex runner and bit trip runner.
+![Corgi Runner](./docs/screenshot.png)
 
-### Description
-Your corgi saw a truck full of delicious sausages and started to chase it! Run after him and avoid the slew of obstacles in the way.
+[live](https://direcorgi.github.io/CorgiRunner/)
 
-### Functionality
-Users will be able to:
-- [ ] Start, pause, and reset the game after they get game over.
-- [ ] Choose a difficulty level that will change the patterns and frequency of obstacles.
-- [ ] Scoring and saving high scores locally.
-- [ ] Modal explaining the story and controls of the game
-- [ ] Production README
+Corgi Runner is an infinite run game inspired by the likes of T-rex runner,
+Temple Run, and Subway Surfers. The goal of the game is to survive as long as possible
+and get the highest score.
 
-### Wireframes
-Corgi Runner will consist of a single page with the main game screen, a nav with difficulty icons and the modal button, and a footer with links to my Github, and Portfolio.  
+## Instructions
+Your Corgi has escaped! Chase after him! Choose a difficulty level. Avoid obstacles (trees and birds) by pressing the **space** key to jump.
 
+## Technologies
+- JavaScript
+- HTML5 Canvas
 
-![wireframes](./docs/Wireframes/corgi-runner.png)
+## Features and Implementation
+All features in this game were implemented using native JavaScript DOM manipulation and, HTML5 canvas. No additional libraries were used.
 
-### Technologies
-This project will use the following technologies:
-- Vanilla Javascript for game logic and jQuery for button inputs
-- HTML5 Canvas for rendering and graphics
-- Webpack to bundle and serve scripts
-- Lightweight backend Firebase to keep track of high-scores
+### Parallax Background
+The Parallax background effect was created by having multiple canvas layers.  
 
-The following scripts will be needed:
-- player.js to keep track of all jumping and collisions with the player object
-- board.js to handle object rendering on the main game board
-- obstacle.js this class will be the basis of all obstacles in the game
-- random_obstacle.js this script be in charge of creating the right patterns of obstacles based on the difficulty level
+```JavaScript
+class Background {
+  constructor(ctx, image, posY, imageLength, speed) {
+    ...
+  }
+  ...
+}
 
-### Timeline
-**Day 1** Setup html and css to render all non-canvas objects properly. Setup player.js to properly render a player object that can jump when you press spacebar.
+createBackground(backgroundCtx, foregroundCtx) {
+  const backgroundImage = new Image();
+  backgroundImage.src = './assets/images/scrolling-background.jpg';
+  this.background = new Background(backgroundCtx, backgroundImage, -35, 1422, 0.8);
 
-**Day 2** Create two types of obstacles, one that you must jump over and one that you must not jump to get under. Add a rotation that will change the sprite that is rendered randomly for these obstacles. Add collision between the player and the obstacles.
+  const foregroundImage = new Image();
+  foregroundImage.src = './assets/images/foreground-grass.png';
+  this.foreground = new Background(foregroundCtx, foregroundImage, 250, 720, 6);
+}
+```
+Two different instances of the Background class are created in the main game class, and are each given a different image and a separate canvas context. These will scroll at different speeds, creating the parallax effect. The degree of this effect can be adjusted directly in the game class.
 
-**Day 3** Add a scoring system and add the ability to save your high scores locally. Add random_obstacle.js to create beatable patterns of obstacles based on the selected difficulty level.
+### Difficulty Settings
+The difficulty settings change the random obstacle generation in the game. This is achieved by having a difficulty object that stores all of these settings, and will readjust the game based on the player selection.
 
-### Bonus Features
-- [ ] Global high scores will be saved via a lite backend such as Firebase.
-- [ ] Add more obstacle types such as moving ones that go up and down.
+```JavaScript
+const Difficulty = {
+  'hard': {
+    birds: true,
+    multiplier: 7,
+    maxTrees: 3,
+    maxObstacles: 10,
+  },
+  'medium': {
+    birds: false,
+    multiplier: 3,
+    maxTrees: 3,
+    maxObstacles: 7,
+  },
+  'easy': {
+    birds: false,
+    multiplier: 1,
+    maxTrees: 1,
+    maxObstacles: 6,
+  }
+};
+```
+These settings are called on the ``game.start(difficulty)`` method. These settings can be tweaked as needed directly in the difficulty file.
+
+### High Scores
+Local high scores are saved in a score object. This score object will also try to write a cookie to the browser in order to save local high scores between sessions. The score object will check if there is a cookie with scores already present, and if there is it will use those saved high scores.
+
+```JavaScript
+const scoreCookie = Util.readCookie('localHighScores');
+if (scoreCookie) {
+  this.localHighScores = JSON.parse(scoreCookie);
+} else {
+  this.localHighScores = [
+    [ 'dio', 15000 ],
+    [ 'dio', 12000 ],
+    [ 'dio', 8000 ],
+    [ 'dio', 4000 ],
+    [ 'dio', 1000 ]
+  ];
+}
+```
+On the live version there is a global high score that requires a backend database to store names and scores. This not a feature you will have if you download and play this game locally.
+
+## Future Features
+1. Add more difficulty settings (VERY HARD).
+2. Create obstacles that move up and down and create beatable patterns around those.
+
+#### Legal
+Art and music assets used in this project are for educational purposes only.
+
+Art and Music assets are property of [Tobi Fox](www.undertale.com/), [Nintendo](www.nintendo.com/), and [Nexon](maplestory.nexon.net/).
