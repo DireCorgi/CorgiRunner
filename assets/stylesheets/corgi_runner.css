@@ -19,12 +19,12 @@ main {
   text-align: center;
   border-bottom: 3px solid #C8C2E2;
   overflow: hidden;
-  min-width: 595px;
+  min-width: 780px;
 }
 
 .logo {
   display: inline-block;
-  margin-left: 52px;
+  margin-left: 156px;
 }
 
 .logo > h1 {
@@ -110,13 +110,19 @@ main {
 .links {
   float: right;
   display: inline-block;
-  margin-right: 20px;
 }
 
 .links > a {
   display: block;
   margin: 24px 10px;
   float: left;
+  width: 32px;
+  height: 32px;
+}
+
+.links > a > img {
+  width: 100%;
+  height: auto;
 }
 
 .gameplay-nav {
