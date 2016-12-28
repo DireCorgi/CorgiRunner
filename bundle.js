@@ -248,6 +248,7 @@
 	    this.nextSpawn = this.spawnRate + Util.getRandomIntInclusive(0, 25);
 	    this.obstacles = [];
 	    this.score = new Score(1);
+	    this.muteMusic = false;
 	
 	    this.jump = this.jump.bind(this);
 	    this.draw = this.draw.bind(this);
@@ -272,8 +273,23 @@
 	
 	  openMenu() {
 	    this.score.setScore();
-	    this.menuMusic.volume = 0.7;
-	    this.menuMusic.play();
+	    if (!this.muteMusic) {
+	      this.menuMusic.volume = 0.7;
+	      this.menuMusic.play();
+	    }
+	  }
+	
+	  toggleMute() {
+	    if (this.muteMusic) {
+	      this.muteMusic = false;
+	      if (this.gamePlaying) this.backgroundMusic.play();
+	      else this.menuMusic.play();
+	    } else {
+	      this.muteMusic = true;
+	      this.backgroundMusic.pause();
+	      this.menuMusic.pause();
+	    }
+	    return this.muteMusic;
 	  }
 	
 	  setButtonListeners() {
@@ -350,7 +366,7 @@
 	    this.difficulty = difficulty;
 	    this.menuMusic.pause();
 	    this.menuMusic.currentTime = 0;
-	    this.backgroundMusic.play();
+	    if (!this.muteMusic) this.backgroundMusic.play();
 	    this.gamePlaying = true;
 	    this.gameOver = false;
 	    this.canReset = false;
@@ -804,6 +820,7 @@
 	    const closeAboutButton = document.getElementById('close-how-to-play');
 	    const menuButton = document.getElementById('menu-button');
 	    const submitHighScoreButton = document.getElementById('submit-highscore');
+	    const muteButton = document.getElementById('mute-button');
 	    const selectSound = new Audio('./assets/sounds/select.wav');
 	
 	    const openAbout = (e) => {
@@ -831,8 +848,7 @@
 	      game.backgroundMusic.pause();
 	      game.backgroundMusic.currentTime = 0;
 	      playSelectSound();
-	      game.menuMusic.currentTime = 0;
-	      game.menuMusic.play();
+	      game.openMenu();
 	      document.getElementById('game-over-menu').className += ' close';
 	      openMainMenu();
 	      game.ctx.clearRect(0, 0, 800, 300);
@@ -849,12 +865,23 @@
 	      document.getElementById('game-canvas').focus();
 	    };
 	
+	    const muteToggle = (e) => {
+	      if (game.toggleMute()) {
+	        muteButton.className = 'toggled';
+	      } else {
+	        muteButton.className = '';
+	      }
+	      playSelectSound();
+	      document.getElementById('game-canvas').focus();
+	    };
+	
 	    game.gameCanvas.addEventListener('keydown', (e)=> {
 	      if (e.code === 'Escape' && game.gamePlaying) {
 	        e.preventDefault();
 	        backToMenu();
 	      }
 	    });
+	    muteButton.addEventListener('click', muteToggle);
 	    menuButton.addEventListener('click', backToMenu);
 	    aboutButton.addEventListener('click', openAbout);
 	    closeAboutButton.addEventListener('click', openAbout);

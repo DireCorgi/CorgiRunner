@@ -265,8 +265,8 @@ main {
   background: black;
   top: 2px;
   left: 2px;
-  bottom: 0px;
-  right: 0px;
+  bottom: -2px;
+  right: -2px;
   display: block;
 }
 
@@ -390,4 +390,23 @@ main {
 
 .close {
   display: none;
+}
+
+#mute-button {
+  position: absolute;
+  z-index: 5;
+  left: 90px;
+  top: 21px;
+  font-size: 24px;
+  color: #FEF86C;
+  text-shadow: 0 0 4px black;
+  font-family: 'VT323', monospace;
+}
+
+#mute-button:hover {
+  text-shadow: 0 0 1px black;
+}
+
+.toggled {
+  text-decoration: line-through;
 }
