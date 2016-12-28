@@ -701,7 +701,7 @@
 	      scoreboard.appendChild(score);
 	    });
 	    const jsonScores = JSON.stringify(this.localHighScores);
-	    Util.createCookie('localHighScores', jsonScores, 100);
+	    Util.createCookie('localHighScores', jsonScores);
 	  }
 	
 	  checkHighScore() {
@@ -737,12 +737,12 @@
 	    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	  },
 	  createCookie(name, value, days) {
+	    let expires = "";
 	    if (days) {
 	        const date = new Date();
 	        date.setTime(date.getTime() + (days*24*60*60*1000));
-	        const expires = "; expires=" + date.toUTCString();
+	        expires = "; expires=" + date.toUTCString();
 	    }
-	    else var expires = "";
 	    document.cookie = name + "=" + value + expires + "; path=/";
 	  },
 	  readCookie(name) {
