@@ -92,5 +92,4 @@ On the live version there is a global high score that requires a backend databas
 
 #### Legal
 Art and music assets used in this project are for educational purposes only.
-
 Art and Music assets are property of [Tobi Fox](www.undertale.com/), [Nintendo](www.nintendo.com/), and [Nexon](maplestory.nexon.net/).
