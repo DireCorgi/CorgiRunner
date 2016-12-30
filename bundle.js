@@ -217,27 +217,6 @@
 	const Menu = __webpack_require__(10);
 	const Difficulty = __webpack_require__(11);
 	
-	const HARD = {
-	 birds: true,
-	 multiplier: 7,
-	 maxTrees: 3,
-	 maxObstacles: 8,
-	};
-	
-	const MEDIUM = {
-	  birds: false,
-	  multiplier: 3,
-	  maxTrees: 3,
-	  maxObstacles: 7,
-	};
-	
-	const EASY ={
-	  birds: false,
-	  multiplier: 1,
-	  maxTrees: 1,
-	  maxObstacles: 6,
-	};
-	
 	class Game {
 	  constructor(ctx, gameCanvas, backgroundCtx, foregroundCtx) {
 	    this.ctx = ctx;
@@ -264,7 +243,7 @@
 	  }
 	
 	  jump(event) {
-	    if (event.code === 'Space' && this.gamePlaying && !this.gameOver) {
+	    if (event.code === 'Space' && this.gamePlaying) {
 	      event.preventDefault();
 	      if (!this.gameOver)
 	        this.player.toggleJump();
