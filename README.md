@@ -1,7 +1,7 @@
 # Corgi Runner
 ![Corgi Runner](./docs/screenshot.png)
 
-[live](www.direcorgi.com/runner/)
+[live](http://www.direcorgi.com/runner/)
 
 Corgi Runner is an infinite run game inspired by the likes of T-rex runner,
 Temple Run, and Subway Surfers. The goal of the game is to survive as long as possible
