@@ -20,11 +20,11 @@ main {
   border-bottom: 3px solid #C8C2E2;
   overflow: hidden;
   min-width: 780px;
+  height: 80px;
 }
 
 .logo {
   display: inline-block;
-  margin-left: 156px;
 }
 
 .logo > h1 {
@@ -415,4 +415,17 @@ main {
 
 .toggled {
   text-decoration: line-through;
+}
+
+.left-links {
+  float: left;
+  width: 156px;
+}
+
+a.author {
+  width: 80px;
+  margin: 24px 0 20px 10px;
+  text-align: left;
+  font-size: 20px;
+  padding: 3px;
 }
